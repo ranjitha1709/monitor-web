@@ -2,10 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-
 const CardTwo: React.FC = () => {
-
-
   return (
     <View style={styles.container}>
       <Text style={styles.logoText}>
@@ -14,25 +11,33 @@ const CardTwo: React.FC = () => {
         <Text style={styles.suffix}>24x7</Text>
       </Text>
 
-      <Image source={require("../assets/images/illustration1.png")} style={styles.image} />
+      <Image
+        source={require("../assets/images/illustration1.png")}
+        style={styles.image}
+      />
 
-      <Text style={styles.welcomeText}>Downtime happen. 
-</Text>
-      <Text style={styles.highlightedText}>Get notified!
-      </Text>
+      <Text style={styles.welcomeText}>Downtime happen.</Text>
+      <Text style={styles.highlightedText}>Get notified!</Text>
 
       <Text style={styles.description}>
-      Stay notified thanks to push notifications, e-mail. SMS & voice call alerts. Ingrate your favorite services like Stack, Telegram and others
-
+        Stay notified thanks to push notifications, e-mail. SMS & voice call
+        alerts. Ingrate your favorite services like Stack, Telegram and others
       </Text>
 
       <TouchableOpacity style={styles.button}>
-      <LinearGradient colors={["#EF1133", "#5A00D1"]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={styles.gradient}>          <Text style={styles.buttonText}>Register for FREE!</Text>
+        <LinearGradient
+          colors={["#EF1133", "#5A00D1"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.gradient}
+        >
+          {" "}
+          <Text style={styles.buttonText}>Register for FREE!</Text>
         </LinearGradient>
       </TouchableOpacity>
 
       {/* <TouchableOpacity onPress={() => navigation.navigate("Login")}> */}
-        <Text style={styles.loginText}>I already have an account</Text>
+      <Text style={styles.loginText}>I already have an account</Text>
       {/* </TouchableOpacity> */}
 
       {/* <View style={styles.pagination}>
@@ -91,12 +96,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    width: "100%",
-    borderRadius: 25,
+    borderRadius: 32,
     overflow: "hidden",
+    width: 342,
+    height: 48,
   },
   gradient: {
-    flex:1,
+    flex: 1,
     paddingVertical: 12,
     alignItems: "center",
     borderRadius: 25,
