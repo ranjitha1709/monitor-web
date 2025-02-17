@@ -1,8 +1,16 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { useFonts, Roboto_300Light } from "@expo-google-fonts/roboto";
 
 const CardThree: React.FC = () => {
+  const [fontsLoaded] = useFonts({
+    Roboto_300Light,
+  });
+
+  if (!fontsLoaded) {
+    return null; // Prevent rendering until fonts load
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.logoText}>
@@ -16,7 +24,7 @@ const CardThree: React.FC = () => {
         style={styles.image}
       />
 
-      <Text>
+      <Text style={styles.mergeText}>
         <Text style={styles.highlightedText}>5X faster</Text>
         <Text style={styles.ecosystem}> Mdetection & SSL</Text>
       </Text>
@@ -82,32 +90,66 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeText: {
-    fontSize: 22,
+    fontFamily: "Roboto_300Light",
+    fontSize: 24, // Adjust based on `Headline Medium`
+    lineHeight: 32, // Adjust based on `Headline Medium/Line Height`
+    letterSpacing: 0.15, // Adjust based on `Headline Small/Tracking`
     color: "#ffffff",
-    fontWeight: "500",
+    textAlign: "left",
+    marginLeft: 22,
+
+    alignSelf: "flex-start",
   },
   ecosystem: {
     fontSize: 22,
     color: "#ffffff",
     marginBottom: 10,
+    fontFamily: "Roboto_300Light",
+
+    // textAlign: "left",
+    // alignSelf: "flex-start",
+    // marginLeft: 23,
+  },
+  mergeText: {
+    fontFamily: "Roboto_300Light",
+    fontSize: 24, // Adjust based on `Headline Medium`
+    lineHeight: 32, // Adjust based on `Headline Medium/Line Height`
+    letterSpacing: 0.15,
+    textAlign: "left",
+    alignSelf: "flex-start",
+    marginLeft: 23,
   },
   highlightedText: {
     fontSize: 22,
     color: "#ff2b4b",
     fontWeight: "bold",
     marginBottom: 10,
+    fontFamily: "Roboto_300Light",
+
+    // textAlign: "left",
+    // alignSelf: "flex-start",
+    // marginLeft: 23,
   },
   description: {
+    marginTop: 12,
+
     color: "#CCCCCC",
     fontSize: 14,
-    textAlign: "center",
+    lineHeight: 20,
+    // textAlign: "center",
     marginBottom: 20,
+    textAlign: "left",
+    alignSelf: "flex-start",
+    marginLeft: 23,
+    fontFamily: "Roboto", // Use the installed font
+    fontWeight: "400",
   },
   button: {
     borderRadius: 32,
     overflow: "hidden",
     width: 342,
     height: 48,
+    gap: "10px",
   },
   gradient: {
     flex: 1,
@@ -118,7 +160,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Roboto", // Use the installed font
+    fontWeight: "600",
   },
   loginText: {
     marginTop: 15,

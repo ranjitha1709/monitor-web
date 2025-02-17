@@ -1,8 +1,16 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { useFonts, Roboto_300Light } from "@expo-google-fonts/roboto";
 
 const CardTwo: React.FC = () => {
+  const [fontsLoaded] = useFonts({
+    Roboto_300Light,
+  });
+
+  if (!fontsLoaded) {
+    return null; // Prevent rendering until fonts load
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.logoText}>
@@ -82,24 +90,44 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: "#ffffff",
     fontWeight: "500",
+    textAlign: "left",
+    alignSelf: "flex-start",
+    marginLeft: 23,
+    fontFamily: "Roboto_300Light",
   },
   highlightedText: {
     fontSize: 22,
     color: "#ff2b4b",
     fontWeight: "bold",
     marginBottom: 10,
+    textAlign: "left",
+    alignSelf: "flex-start",
+    marginLeft: 23,
+    fontFamily: "Roboto_300Light",
+  },
+  mergeText: {
+    textAlign: "left",
+    alignSelf: "flex-start",
+    marginLeft: 23,
+    fontFamily: "Roboto_300Light",
   },
   description: {
     color: "#CCCCCC",
     fontSize: 14,
-    textAlign: "center",
+    // textAlign: "center",
     marginBottom: 20,
+    textAlign: "left",
+    alignSelf: "flex-start",
+    marginLeft: 23,
+    fontFamily: "Roboto", // Use the installed font
+    fontWeight: "400",
   },
   button: {
     borderRadius: 32,
     overflow: "hidden",
     width: 342,
     height: 48,
+    gap: "10px",
   },
   gradient: {
     flex: 1,
@@ -110,7 +138,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Roboto", // Use the installed font
+    fontWeight: "600",
   },
   loginText: {
     marginTop: 15,
