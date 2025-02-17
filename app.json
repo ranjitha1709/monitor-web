@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "MyCarouselApp",
+    "slug": "MyCarouselApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "platforms": ["ios", "android", "web"],
+    "plugins": []
+  }
+}
